@@ -1,0 +1,95 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bg-text{
+    background-color: white ;
+    color: #0C0C0C;
+    font-size: 2rem;
+}
+.price-mute{
+    font-size: 20px;
+    /* margin-left: 25%; */
+     display: block;
+   padding-bottom: 1rem;
+}
+a{
+  color: white;
+}
+.icons a i{
+  font-size: 4rem;
+}
+
+.alert{
+    font-size: 15rem;
+    font-weight: bold;
+}
+.p_alert{
+    font-size:  3rem;
+
+    color: white;
+    padding: 1rem 0;
+}
+
+.error h2{
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+.space{
+    height: 8vh;
+    /* width: 100%; */
+}
+.formulario{
+    margin-top: 2rem;
+}
+.formulario a{
+    padding: 5px;
+}
+.formulario input{
+    margin: 0.5%;
+}
+.formulario{
+    display: flex;
+    color: white;
+}
+.btnfrm input{
+    padding: 0.5rem;
+    background-color: #92c649;
+    border-radius: 0.5rem;
+    border-style: none;
+    color: white;
+}
+
+/* <h1>Tienda virtual</h1>
+<div class="row">
+      <h1 class="col-12 bg-text rounded">Productos</h1>
+     <div class="col-md-12 d-flex flex-row justify-content-between flex-wrap">
+        <div class="card" style="width: 200px;">
+            <img src="img/reloj.jpg" class="card-img-top" alt="">
+             <div class="card-body">
+                <h5 class="card-title">reloj</h5>
+                <small class="price-mute">19$</small>
+                <button class="btn btn-primary w-100" type="button">+</button>
+             </div>
+        </div>  
+        <div class="card" style="width: 200px;">
+            <img src="img/silla.jpg" class="card-img-top" alt="">
+            <div class="card-body">
+                <h5 class="card-title">silla</h5>
+                <small class="price-mute">19$</small>
+                <button class="btn btn-primary w-100" type="button">+</button>
+             </div>
+        </div>  
+        <div class="card" style="width: 200px;">
+            <img src="img/zapatilla.jpg" class="card-img-top" alt="">
+            <div class="card-body">
+                <h5 class="card-title">zapatilla</h5>
+                <small class="price-mute">19$</small>
+                <button class="btn btn-primary w-100" type="button">+</button>
+             </div>
+        </div>                        
+     </div>                     
+</div>    */
