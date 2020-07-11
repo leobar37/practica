@@ -1,67 +1,82 @@
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.bg-text{
-    background-color: white ;
+.bg-text {
+    background-color: white;
     color: #0C0C0C;
     font-size: 2rem;
 }
-.price-mute{
+
+.price-mute {
     font-size: 20px;
     /* margin-left: 25%; */
-     display: block;
-   padding-bottom: 1rem;
-}
-a{
-  color: white;
-}
-.icons a i{
-  font-size: 4rem;
+    display: block;
+    padding-bottom: 1rem;
 }
 
-.alert{
+a {
+    color: white;
+}
+
+.icons a i {
+    font-size: 4rem;
+}
+
+.alert {
     font-size: 15rem;
     font-weight: bold;
 }
-.p_alert{
-    font-size:  3rem;
 
+.p_alert {
+    font-size: 3rem;
     color: white;
     padding: 1rem 0;
 }
 
-.error h2{
+.error h2 {
     font-size: 2rem;
     padding: 1rem 0;
 }
-.space{
+
+.space {
     height: 8vh;
     /* width: 100%; */
 }
-.formulario{
+
+.formulario {
     margin-top: 2rem;
 }
-.formulario a{
+
+.formulario a {
     padding: 5px;
 }
-.formulario input{
+
+.formulario input {
     margin: 0.5%;
 }
-.formulario{
+
+.formulario {
     display: flex;
     color: white;
 }
-.btnfrm input{
+
+.btnfrm input {
     padding: 0.5rem;
     background-color: #92c649;
     border-radius: 0.5rem;
     border-style: none;
     color: white;
 }
+
+.error_icon {
+    color: white;
+    font-size: 4rem;
+    padding: 1.5rem;
+}
+
 
 /* <h1>Tienda virtual</h1>
 <div class="row">

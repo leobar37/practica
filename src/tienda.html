@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Freelance</title>
-    <link rel="stylesheet" href="../node_modules/bootswatch/dist/cyborg/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootrap.min.css">
     <script src="https://kit.fontawesome.com/c95e397b61.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/normalice.css">
@@ -66,14 +66,16 @@
                                  -->
       <div class="row">
                           
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <div class="row">
                     <div class="space col-12">
             
                     </div>
                     <h1 class="col-md-10 ml-4 bg-text rounded">SERVICIOS</h1>
-                    <div class="col-md-12 d-flex flex-row justify-content-around flex-wrap">
-                        <div class="card" style="width: 25%;">
+                    <div class="col-md-12 d-flex flex-row justify-content-around flex-wrap" id="products">
+                       
+                       
+                        <!-- <div class="card" style="width: 25%;">
                             <img src="img/reloj.jpg" class="card-img-top" alt="">
                             <div class="card-body">
                                 <h5 class="card-title">reloj</h5>
@@ -82,7 +84,7 @@
                             </div>
                         </div>
                         <div class="card" style="width: 25%;">
-                            <img src="img/silla.jpg" class="card-img-top" alt="">
+                            <img src="img/zapatilla2.jpg" class="card-img-top" alt="">
                             <div class="card-body">
                                 <h5 class="card-title">silla</h5>
                                 <small class="price-mute">19$</small>
@@ -90,17 +92,17 @@
                             </div>
                         </div>
                         <div class="card" style="width: 29%;">
-                            <img src="img/zapatilla.jpg" class="card-img-top" alt="">
+                            <img src="img/zapatillas.jpg" class="card-img-top" alt="">
                             <div class="card-body">
                                 <h5 class="card-title">zapatilla</h5>
                                 <small class="price-mute">19$</small>
                                 <button class="btn btn-primary w-100" type="button">+</button>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <!-- 
                             /*=============================================
                             =                 tabla   =
@@ -207,10 +209,16 @@
             </div>
          </main>
 
-      
+         <!-- modal -->
+     <div id="products" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" id="productos_modal">
+                
+            </div>
+        </div>
+    </div>
   
-    <!-- 
-                                
+    <!--           
     /*=============================================
     =           footer           =
     =============================================*/
@@ -317,6 +325,8 @@
             </div>
         </div>
     </footer>
+    <script src="./js/localstoraje.js"></script>
+    <script src="./js/tienda.js"></script>
 </body>
 
 </html>
