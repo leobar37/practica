@@ -11,7 +11,6 @@ const DELETE = 1;
 /* ************modal controls */
 
 let modalRender = function(icon_name, message, idModal, option) {
-    let button = `<button class ="btn btn-success" id="confirmButtom"> confirm </button>`;
     let content = `
     <div class="modal-dialog" role="document">
         <div class="modal-content" id="productos_modal">
@@ -19,14 +18,12 @@ let modalRender = function(icon_name, message, idModal, option) {
                <h1 class="card-title text-center"> <i class=" ${icon_name} error_icon"></i></h1>
                    <div class="card-body text-center">
                        <p class="card-text text-center"> ${message}.</p>
-                        ${ option != 0 ?  button : "" }
+                        
                  </div>
             </div>
         </div>
     </div>
     `;
-
-
     let modal = $(`#${idModal}`);
     document.getElementById(idModal).innerHTML = content;
     setTimeout(() => {
@@ -35,11 +32,7 @@ let modalRender = function(icon_name, message, idModal, option) {
 }
 
 let renderimages = function() {
-    let images = [
-        "reloj.jpg",
-        "zapatilla2.jpg",
-        "zapatillas.jpg"
-    ]
+    let images = ProductcApi.getImages();
     images.forEach(img => {
 
         let image;
@@ -53,42 +46,29 @@ let renderimages = function() {
     })
 }
 
-let formAudit = function() {
-    /* galery */
-    let galery = document.querySelectorAll('#galery .card button');
-    let image;
-    let name = "";
-    let price;
-    galery.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            image = e.currentTarget.getAttribute('data-image');
-            document.getElementById('pr_image').src = 'img/' + image;
-        });
-    }) /* nombre */
-    document.getElementById('nom').addEventListener('keyup', (e) => {
-        name = e.currentTarget.value;
-        document.getElementById('pr_name').innerHTML = name;
-
-    });
-    document.getElementById('price').addEventListener('keyup', (e) => {
-        price = e.currentTarget.value;
-        document.getElementById('pr_price').innerHTML = price + '$';
-    });
-
-    document.getElementById('confirm').addEventListener('click', () => {
-        if (valideCamps([name, price, image])) {
-            let pro = new Product(name, price, image);
-            ProductcApi.AddProduct(pro);
-            resetPrevieww();
-            modalRender(SUCCESS_ICON, 'se ha agregado un producto', 'modalGeneral', 0);
-
-        } else {
-            modalRender(ERROR_ICON, 'se debe llenar todos lo campis', 'modalGeneral', 0);
-        }
+const modalGaleryRender = function(idModal) {
+    let images = ProductcApi.getImages();
+    let container = document.createElement('div');
+    container.classList.add(['row', 'd-flex flex-wrap', 'justify-content-center', 'flex-row']);
+    images.forEach(img => {
+        let image;
+        image = `
+     <div class="card m-2" style="max-width: 15rem;">
+        <img src="img/${img}" class="card-img-top" alt="">
+        <button class="btn btn-primary" type="button" data-image="${img}" >add image</button>
+    </div>
+     `;
+        container.innerHTML += image;
     })
+    console.log(container);
+    let modal = $(`#${idModal}`);
+    document.getElementById(idModal).appendChild(container);
+    setTimeout(() => {
+        modal.modal('show');
+    }, 100)
 }
 
+modalGaleryRender('modalGeneral');
 let tabsFunction = function(callback) {
     let elements = document.querySelectorAll('#nav-tabs li  a');
     elements.forEach(el => {
@@ -109,6 +89,17 @@ let tabs = function() {
                 })
                 if (id == 'products') {
                     renderProducts();
+                    //render  edit preview
+                    renderEditPreview({
+                        name: '',
+                        image: 'no-image.png',
+                        price: 0
+                    });
+                }
+                if (id == 'addProduct') {
+                    //render preview
+                    console.log('render');
+                    renderPreview();
                 }
                 tab.style.display = 'initial';
                 tab.classList.add('show');
@@ -130,7 +121,7 @@ let renderProducto = function(product) {
            <button class="btn btn-danger delete" data-delete= "${product.id}" type="button">
               <i class="fas fa-trash"></i>
            </button>
-           <button class="btn btn-primary" type="button">
+           <button class="btn btn-primary edit"  data-edit="${product.id}" type="button">
                <i class="fas fa-edit"></i>
            </button>
        </div>
@@ -151,13 +142,24 @@ let renderProducts = function() {
             ProductcApi.deleteProduct(id);
             modalRender(SUCCESS_ICON, 'se ha eliminado un elemento', "modalGeneral", DELETE);
             renderProducts();
-
         });
     })
+    document.querySelectorAll('#products .edit').forEach(butt => {
+
+        butt.addEventListener('click', (e) => {
+            let id = e.currentTarget.getAttribute('data-edit');
+            // ProductcApi.deleteProduct(id);
+            let product = ProductcApi.searchForId(id);
+            renderEditPreview(product);
+            // modalRender(SUCCESS_ICON, 'se ha  un elemento', "modalGeneral", DELETE);
+            renderProducts();
+        });
+    })
+
 }
 
 renderimages();
-formAudit();
+// formAudit();
 tabs();
 // renderProducts();
 

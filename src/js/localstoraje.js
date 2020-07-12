@@ -1,6 +1,8 @@
 const NAME_ITEM = "products";
+const IMAGES_BAS = "IMAGES";
 class ProductcApi {
     constructor() {}
+
     static AddProduct(prduct) {
         let products = this.getProducts();
         products.push(prduct);
@@ -41,11 +43,24 @@ class ProductcApi {
     static searchForId(id) {
         let products = this.getProducts();
         let product = products.find(product => product.id == id);
-
         return product ? product : false;
     }
+    static editProduct(id, product) {
+        product = product.id = id;
+        this.deleteProduct(id);
+        this.AddProduct(product);
+    }
+    static getImages() {
+        return [
+            "reloj.jpg",
+            "zapatilla2.jpg",
+            "zapatillas.jpg",
+            "reloj.jpg",
+            "zapatilla2.jpg",
+            "zapatillas.jpg"
+        ]
+    }
 }
-
 
 class Product {
     id;
