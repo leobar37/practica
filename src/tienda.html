@@ -70,31 +70,6 @@
                     <h1 class="col-md-10 ml-4 bg-text rounded">SERVICIOS</h1>
                     <div class="col-md-12 d-flex flex-row justify-content-around flex-wrap" id="products">
 
-
-                        <!-- <div class="card" style="width: 25%;">
-                            <img src="img/reloj.jpg" class="card-img-top" alt="">
-                            <div class="card-body">
-                                <h5 class="card-title">reloj</h5>
-                                <small class="price-mute">19$</small>
-                                <button class="btn btn-primary w-100" type="button">+</button>
-                            </div>
-                        </div>
-                        <div class="card" style="width: 25%;">
-                            <img src="img/zapatilla2.jpg" class="card-img-top" alt="">
-                            <div class="card-body">
-                                <h5 class="card-title">silla</h5>
-                                <small class="price-mute">19$</small>
-                                <button class="btn btn-primary w-100" type="button">+</button>
-                            </div>
-                        </div>
-                        <div class="card" style="width: 29%;">
-                            <img src="img/zapatillas.jpg" class="card-img-top" alt="">
-                            <div class="card-body">
-                                <h5 class="card-title">zapatilla</h5>
-                                <small class="price-mute">19$</small>
-                                <button class="btn btn-primary w-100" type="button">+</button>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
             </div>
@@ -119,57 +94,7 @@
 
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Producto</td>
-                                    <td>15</td>
-                                    <td>9000.99$</td>
-                                    <td>
-                                        <button class="badge badge-danger">
-                                                        x
-                                             </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Producto</td>
-                                    <td>15</td>
-                                    <td>9000.99$</td>
-                                    <td>
-                                        <button class="badge badge-danger">
-                                                        x
-                                             </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Producto</td>
-                                    <td>15</td>
-                                    <td>9000.99$</td>
-                                    <td>
-                                        <button class="badge badge-danger">
-                                                        x
-                                             </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Producto</td>
-                                    <td>15</td>
-                                    <td>9000.99$</td>
-                                    <td>
-                                        <button class="badge badge-danger">
-                                                        x
-                                             </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Producto</td>
-                                    <td>15</td>
-                                    <td>9000.99$</td>
-                                    <td>
-                                        <button class="badge badge-danger">
-                                                        x
-                                             </button>
-                                    </td>
-                                </tr>
+                            <tbody id="carrito">
                             </tbody>
                         </table>
                     </div>
@@ -187,18 +112,18 @@
              -->
                 <form action="">
                     <div class="form-group row">
-                        <label for="nom" class="col-sm-2 col-form-label">Nombres y Apellidos</label>
+                        <label for="nom" class="col-sm-2 col-form-label" id="">Nombres y Apellidos</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="nom">
+                            <input type="text" class="form-control" id="com_names">
                         </div>
                         <button class="btn btn-success col-sm-2" type="button">Nueva compra</button>
                     </div>
                     <div class="form-group row">
-                        <label for="email" class="col-sm-2 col-form-label">Email</label>
+                        <label for="email" class="col-sm-2 col-form-label" id="">Email</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="email">
+                            <input type="text" class="form-control" id="com_email">
                         </div>
-                        <button class="btn btn-success col-sm-2" type="button">Enviar compra</button>
+                        <button class="btn btn-success col-sm-2" id="enviar_compra" type="button">Enviar compra</button>
                     </div>
 
                 </form>
@@ -320,6 +245,7 @@
             </div>
         </div>
     </footer>
+    <script src="js/utils.js"></script>
     <script src="./js/localstoraje.js"></script>
     <script src="./js/tienda.js"></script>
 </body>

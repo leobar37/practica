@@ -1,5 +1,6 @@
 const NAME_ITEM = "products";
-const IMAGES_BAS = "IMAGES";
+// const IMAGES_BAS = "IMAGES";
+const COMPRAS_BAS = "compras";
 class ProductcApi {
     constructor() {}
 
@@ -46,7 +47,7 @@ class ProductcApi {
         return product ? product : false;
     }
     static editProduct(id, product) {
-        product = product.id = id;
+        product.id = id;
         this.deleteProduct(id);
         this.AddProduct(product);
     }
@@ -59,6 +60,34 @@ class ProductcApi {
             "zapatilla2.jpg",
             "zapatillas.jpg"
         ]
+    }
+}
+
+class Compra {
+    nombre;
+    email;
+    productos;
+    fecha;
+    constructor(nombre, email, productos) {
+        this.nombre = nombre;
+        this.email = email;
+        this.fecha = new Date();
+        this.productos = productos;
+
+    }
+    static addCompra(compra) {
+        let compras = this.getCompras();
+        compras.push(compra);
+        localStorage.setItem(COMPRAS_BAS, JSON.stringify(compras));
+    }
+
+    static getCompras() {
+        let compras = [];
+        if (localStorage.getItem(COMPRAS_BAS)) {
+            compras = JSON.parse(localStorage.getItem(COMPRAS_BAS));
+        };
+
+        return compras;
     }
 }
 

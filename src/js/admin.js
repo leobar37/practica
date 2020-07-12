@@ -8,6 +8,9 @@ const ERROR_ICON = "fas fa-times";
 const WRNING_ICON = "fas fa-exclamation-triangle";
 const DELETE = 1;
 
+
+
+
 /* ************modal controls */
 
 let modalRender = function(icon_name, message, idModal, option) {
@@ -46,29 +49,9 @@ let renderimages = function() {
     })
 }
 
-const modalGaleryRender = function(idModal) {
-    let images = ProductcApi.getImages();
-    let container = document.createElement('div');
-    container.classList.add(['row', 'd-flex flex-wrap', 'justify-content-center', 'flex-row']);
-    images.forEach(img => {
-        let image;
-        image = `
-     <div class="card m-2" style="max-width: 15rem;">
-        <img src="img/${img}" class="card-img-top" alt="">
-        <button class="btn btn-primary" type="button" data-image="${img}" >add image</button>
-    </div>
-     `;
-        container.innerHTML += image;
-    })
-    console.log(container);
-    let modal = $(`#${idModal}`);
-    document.getElementById(idModal).appendChild(container);
-    setTimeout(() => {
-        modal.modal('show');
-    }, 100)
-}
 
-modalGaleryRender('modalGeneral');
+
+// modalGaleryRender('modalGeneral');
 let tabsFunction = function(callback) {
     let elements = document.querySelectorAll('#nav-tabs li  a');
     elements.forEach(el => {
