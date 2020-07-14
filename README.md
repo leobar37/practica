@@ -15,5 +15,5 @@ Este proyecto cuenta con las siguientes secciones
   - Tambien se puede hacer una busqueda filtrada del listado de las compras
   - ver el detalle de la compra
   3.  **admin** : (CRUD de los prouctos)
-  `- **add Product:** Agrega un producto al localStorage
+   - **add Product:** Agrega un producto al localStorage
    - **productos:** En esta pestaña se puede eliminar un producto e editarlo
