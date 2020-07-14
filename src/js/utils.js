@@ -6,9 +6,6 @@ let valideCamps = function(values) {
     return value.length > 0 ? false : true;
 }
 
-
-
-
 let resetPrevieww = function() {
     document.getElementById('pr_image').src = 'img/no-image.png';
     document.getElementById('pr_name').innerHTML = ".....";
@@ -150,6 +147,5 @@ let renderEditPreview = function(product) {
 }
 
 const openModal = function() {
-    console.log('modal opern');
     modalGaleryRender('modalGeneral');
 }

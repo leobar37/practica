@@ -1,4 +1,5 @@
  let carrito = [];
+ let compras = [];
  let renderProducto = function(product) {
      let card = document.createElement('div');
      card.classList.add('card');
@@ -50,11 +51,7 @@
                  }
              }
              addItemsTable(carrito);
-             //  if (carrito) {
-             //      addItem(product);
-             //      // id precio cantidad total
-             //  }
-             //adItemTable
+
          })
      })
 
@@ -102,7 +99,6 @@
                  return prod;
              })
              carrito = carrito.filter(pro => pro != null);
-             console.log(carrito);
              if (carrito.length == 0)
                  $carritoTable.innerHTML = "";
              else
@@ -114,18 +110,98 @@
 
  }
  const buttons = () => {
+     /* add compra */
+     let $carritoTable = document.getElementById('carrito');
      document.getElementById('enviar_compra').addEventListener('click', () => {
          let email = document.getElementById('com_email').value;
          let names = document.getElementById('com_names').value;
          if (valideCamps([email, names]) && carrito.length > 0) {
              let compra = new Compra(names, email, carrito);
              Compra.addCompra(compra);
+             modalRender(SUCCESS_ICON, 'se ha agregado una compra', 'modalTienda', 0);
+             renderCompras(Compra.getCompras());
+
          } else {
              console.log('campos vacios');
+             modalRender(ERROR_ICON, 'por favor completar todos los campos', 'modalTienda', 0);
+
          }
 
      });
+
+     document.getElementById('btn_nueva_compra').addEventListener('click', () => {
+         $carritoTable.innerHTML = "";
+         carrito = [];
+         document.getElementById('com_names').value = "";
+         document.getElementById('com_email').value = "";
+     })
  }
 
+
+ /* render compras */
+ const renderCompras = (compras) => {
+     document.getElementById('table_compras')
+         .innerHTML = "";
+     compras.forEach(compra => {
+         let fecha = timeago.format(compra.fecha)
+         document.getElementById('table_compras')
+             .innerHTML +=
+             ` <td>${compra.email}</td>
+             <td>${fecha }</td>
+             <td>${compra.nombre}</td>
+             <td>
+                 <button class="view_compra" data-id=${compra.id} class="btn text-white">
+                     <i class="fas fa-eye"></i>
+                  </button>
+             </td>
+             `
+     })
+     document.querySelectorAll('table .view_compra').forEach(btn => {
+         btn.addEventListener('click', (e) => {
+             e.preventDefault();
+             let id = e.currentTarget.getAttribute('data-id');
+             let compra = Compra.searchForId(id);
+             let products = compra.productos;
+             addItemsTable(products);
+         })
+     })
+ }
+
+
+ /* view compraas */
+
+ const search = () => {
+     console.log(document.getElementById('searchCompra'));
+     document.getElementById('searchCompra')
+         .addEventListener('keyup', (e) => {
+             let value = e.currentTarget.value;
+             value = value.toLowerCase();
+             console.log(value);
+             if (value.trim() == "") {
+                 renderCompras(Compra.getCompras());
+             } else {
+                 let compras = Compra.getCompras().filter(compra => {
+                     let name = compra.nombre.toLowerCase();
+                     name = name.replace(' ', '');
+                     console.log(name);
+                     console.log(name.indexOf(value));
+                     if (name.indexOf(value) > -1) {
+                         return compra;
+                     }
+
+                 })
+                 renderCompras(compras);
+             }
+
+         })
+ }
+
+
+ /* animate compras */
+
+
+
+ search();
  renderProducts();
  buttons();
+ renderCompras(Compra.getCompras());

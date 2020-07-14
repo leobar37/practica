@@ -11,7 +11,8 @@
     "license": "ISC",
     "dependencies": {
         "bootswatch": "^4.5.0",
-        "jquery": "^3.5.1"
+        "jquery": "^3.5.1",
+        "timeago.js": "^4.0.2"
     },
     "devDependencies": {}
 }

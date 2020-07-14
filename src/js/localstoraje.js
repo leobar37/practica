@@ -64,6 +64,7 @@ class ProductcApi {
 }
 
 class Compra {
+    id;
     nombre;
     email;
     productos;
@@ -73,12 +74,29 @@ class Compra {
         this.email = email;
         this.fecha = new Date();
         this.productos = productos;
-
+        this.id = Compra.generateId();
     }
     static addCompra(compra) {
         let compras = this.getCompras();
         compras.push(compra);
         localStorage.setItem(COMPRAS_BAS, JSON.stringify(compras));
+    }
+    static generateId() {
+        let letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let id = "";
+        for (let i = 0; i < 10; i++) {
+            let ram = Math.floor(Math.random() * letters.length);
+            id += letters.charAt(ram);
+        }
+        if (this.searchForId(id)) {
+            this.id = this.generateId();
+        }
+        return id;
+    }
+    static searchForId(id) {
+        let compras = this.getCompras();
+        // let compras = [];
+        return compras.find(compra => compra.id == id);
     }
 
     static getCompras() {

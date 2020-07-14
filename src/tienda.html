@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freelance</title>
+    <title>Mi tienda</title>
     <link rel="stylesheet" href="./css/bootrap.min.css">
     <script src="https://kit.fontawesome.com/c95e397b61.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styles.css">
@@ -18,9 +18,9 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
             <div class="row">
-                <div class="col-md-2 d-flex flex-row  justify-content-between">
-                    <img src="img/discount.png" class="img-fluid col-md-6" width="40px" alt="">
-                    <a class="navbar-brand">DesignBlog</a>
+                <div id="tit" class="col-md-2 d-flex flex-row  justify-content-between">
+                    <img src="img/discount.png" class="img-fluid col-2 col-md-6" width="40px" alt="">
+                    <a class="navbar-brand col-6">OnlineStore</a>
                 </div>
                 <!-- icon navbar -->
                 <button class="navbar-toggler" data-target="#collapase" data-toggle="collapse" aria-controls="collapase" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,7 +36,7 @@
                                 <a class="nav-link" href="construccion.html" tabindex="-1" aria-disabled="true">Acerca de</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#Servicio" class="nav-link">Servicio</a>
+                                <a href="#Producto" class="nav-link">Productos</a>
                             </li>
                             <li class="nav-item">
                                 <a href="./admin.html" class="nav-link">Admin</a>
@@ -54,7 +54,7 @@
     <br>
     <br <!-- /*==============================================m ain==============================================*/ -->
 
-    <main class="container">
+    <main id="Producto" class="container">
         <!-- 
                                 /*=============================================
                                 =                 galery   =
@@ -67,7 +67,7 @@
                     <div class="space col-12">
 
                     </div>
-                    <h1 class="col-md-10 ml-4 bg-text rounded">SERVICIOS</h1>
+                    <h1 class="col-md-10 ml-4 bg-text rounded">PRODUCTOS</h1>
                     <div class="col-md-12 d-flex flex-row justify-content-around flex-wrap" id="products">
 
                     </div>
@@ -116,7 +116,7 @@
                         <div class="col-sm-8">
                             <input type="text" class="form-control" id="com_names">
                         </div>
-                        <button class="btn btn-success col-sm-2" type="button">Nueva compra</button>
+                        <button class="btn btn-success col-sm-2" type="button" id="btn_nueva_compra">Nueva compra</button>
                     </div>
                     <div class="form-group row">
                         <label for="email" class="col-sm-2 col-form-label" id="">Email</label>
@@ -128,6 +128,35 @@
 
                 </form>
             </div>
+            <!--  buscar compras compra -->
+            <!-- <div class="col-md-8 m-4 text-center"> -->
+            <!-- <div class="form-control col-md-12"> -->
+            <h1 class="h3 col-md-12 text-capitalize pb-2">buscar compra</h1>
+            <input class="form-control col-md-8 mb-4" type="text" id="searchCompra" name="buscar" placeholder="buscar compra">
+            <!-- </div> -->
+            <!-- </div> -->
+            <table class="table table-light col-md-8">
+                <thead class="thead-light">
+                    <tr>
+                        <th>gmail</th>
+                        <th>fecha</th>
+                        <th>Nombres</th>
+                    </tr>
+                </thead>
+                <tbody class="" id="table_compras">
+                    <tr>
+                        <td>nombre</td>
+                        <td>fecha</td>
+                        <td>
+                            <button class="btn text-white">
+                                <i class="fas fa-eye"></i>
+                             </button>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+
     </main>
 
     <!-- modal -->
@@ -139,33 +168,39 @@
         </div>
     </div>
 
+
+
     <!--           
     /*=============================================
     =           footer           =
     =============================================*/
-    
                                  -->
+
+    <div id="modalTienda" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+
+    </div>
     <footer class="contenedor-fo">
         <div class="container text-center text-md-left">
             <div class="row text-center text-md-left mt-3 pb-3">
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h6 class="text-uppercase mb-4 font-weight-bold">Nosotros</h6>
-                    <p>Hola, bienvenido a nuestra tienda, somos una empresa nacional e internacional, sedes en diferentes partes de diferentes paises, !GRACIAS POR VISITARNOS¡
+                    <p>Hola, bienvenido a nuestra tienda, somos una empresa nacional, con sedes en diferentes partes del país,
+                        <br> !GRACIAS POR VISITARNOS¡
                     </p>
                 </div>
 
                 <hr class="w-100 clearfix d-md-none">
 
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h6 class="text-uppercase mb-4 font-weight-bold">Servicios</h6>
+                    <h6 class="text-uppercase mb-4 font-weight-bold">Productos</h6>
                     <p>
-                        <a href="#!">Desarrollo Web</a>
+                        <a href="./construccion.html">Reloj</a>
                     </p>
                     <p>
-                        <a href="#!">Desarrollo Apps</a>
+                        <a href="./construccion.html">Zapatillas</a>
                     </p>
                     <p>
-                        <a href="#!">Tiendas Virtuales</a>
+                        <a href="./construccion.html">Zapatillas</a>
                     </p>
                 </div>
 
@@ -174,16 +209,16 @@
                 <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
                     <h6 class="text-uppercase mb-4 font-weight-bold">Links</h6>
                     <p>
-                        <a href="#!">Tu cuenta</a>
+                        <a href="./construccion.html">Tu cuenta</a>
                     </p>
                     <p>
-                        <a href="#!">Conviertete en colaborador</a>
+                        <a href="./construccion.html">Conviertete en colaborador</a>
                     </p>
                     <p>
-                        <a href="#!">Valoraciones de envio</a>
+                        <a href="./construccion.html">Valoraciones de envio</a>
                     </p>
                     <p>
-                        <a href="#!">Ayuda</a>
+                        <a href="./construccion.html">Ayuda</a>
                     </p>
                 </div>
 
@@ -209,7 +244,7 @@
 
                 <div class="col-md-7 col-lg-8">
                     <p class="text-center text-md-left">© 2020 Copyright:
-                        <a href="">
+                        <a href="construccion.html">
                             <strong> León, Gonzalez, Torres, Pérez, Montero</strong>
                         </a>
                     </p>
@@ -245,7 +280,15 @@
             </div>
         </div>
     </footer>
+
+    <!-- dependences -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!-- js fiiles -->
+    <script src="./libs/timeago.js"></script>
     <script src="js/utils.js"></script>
+    <script src="js/modal.js"></script>
     <script src="./js/localstoraje.js"></script>
     <script src="./js/tienda.js"></script>
 </body>

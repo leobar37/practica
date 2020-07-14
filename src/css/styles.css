@@ -77,34 +77,62 @@ a {
     padding: 1.5rem;
 }
 
+@media (min-width:800px) and (max-width:990px) {
+    main .row {
+        padding-top: 10%;
+    }
+    main .col-md-6 {
+        margin: 4rem 0;
+    }
+}
 
-/* <h1>Tienda virtual</h1>
-<div class="row">
-      <h1 class="col-12 bg-text rounded">Productos</h1>
-     <div class="col-md-12 d-flex flex-row justify-content-between flex-wrap">
-        <div class="card" style="width: 200px;">
-            <img src="img/reloj.jpg" class="card-img-top" alt="">
-             <div class="card-body">
-                <h5 class="card-title">reloj</h5>
-                <small class="price-mute">19$</small>
-                <button class="btn btn-primary w-100" type="button">+</button>
-             </div>
-        </div>  
-        <div class="card" style="width: 200px;">
-            <img src="img/silla.jpg" class="card-img-top" alt="">
-            <div class="card-body">
-                <h5 class="card-title">silla</h5>
-                <small class="price-mute">19$</small>
-                <button class="btn btn-primary w-100" type="button">+</button>
-             </div>
-        </div>  
-        <div class="card" style="width: 200px;">
-            <img src="img/zapatilla.jpg" class="card-img-top" alt="">
-            <div class="card-body">
-                <h5 class="card-title">zapatilla</h5>
-                <small class="price-mute">19$</small>
-                <button class="btn btn-primary w-100" type="button">+</button>
-             </div>
-        </div>                        
-     </div>                     
-</div>    */
+@media (min-width:300px) and (max-width:800px) {
+    main .row {
+        padding-top: 45%;
+    }
+    main .display-4 {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width:580px) and (max-width:800px) {
+    main .row {
+        padding-top: 20%;
+    }
+}
+
+@media (min-width:990px) and (max-width:1200px) {
+    nav .nav-link {
+        margin: 0 10px;
+    }
+}
+
+@media screen and (max-width:330px) {
+    main .row {
+        padding-top: 70%;
+    }
+    main .display-4 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width:400px) {
+    nav .col-md-2 img {
+        display: none;
+    }
+    #tit {
+        text-align: center;
+    }
+    #bienv {
+        padding-top: 10%;
+    }
+    nav .col-md-2 a {
+        justify-content: center;
+    }
+}
+
+@media (min-width:765px) and (max-width:990px) {
+    #tit {}
+}
+
+s
