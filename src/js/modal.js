@@ -2,6 +2,7 @@
 const SUCCESS_ICON = "fas fa-thumbs-up";
 const ERROR_ICON = "fas fa-times";
 const WRNING_ICON = "fas fa-exclamation-triangle";
+const INFO_ICON = "fas fa-info ";
 let modalRender = function(icon_name, message, idModal, option) {
     let content = `
     <div class="modal-dialog" role="document">
@@ -9,8 +10,7 @@ let modalRender = function(icon_name, message, idModal, option) {
             <div class="card border-info">
                <h1 class="card-title text-center"> <i class=" ${icon_name} error_icon"></i></h1>
                    <div class="card-body text-center">
-                       <p class="card-text text-center"> ${message}.</p>
-                        
+                       <div class="card-text text-center"> ${message}.</div>
                  </div>
             </div>
         </div>
@@ -21,4 +21,10 @@ let modalRender = function(icon_name, message, idModal, option) {
     setTimeout(() => {
         modal.modal('show');
     }, 100)
+}
+
+
+let createMessage = () => {
+
+
 }

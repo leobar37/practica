@@ -131,8 +131,4 @@ a {
     }
 }
 
-@media (min-width:765px) and (max-width:990px) {
-    #tit {}
-}
-
-s
+@media screen and (max-width: 650px) {}
