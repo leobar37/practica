@@ -10,7 +10,7 @@ let modalRender = function(icon_name, message, idModal, option) {
             <div class="card border-info">
                <h1 class="card-title text-center"> <i class=" ${icon_name} error_icon"></i></h1>
                    <div class="card-body text-center">
-                       <div class="card-text text-center"> ${message}.</div>
+                       <div class="flex flex-column"> ${message}</div>
                  </div>
             </div>
         </div>
